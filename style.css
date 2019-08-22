@@ -3,9 +3,9 @@ body {
   padding: 0;
 }
 .topheader {
-      background-color: #4073bf;
-      color: White;
-      text-align: center;
+  background-color: #4073bf;
+  color: White;
+  text-align: center;
   padding: 1em;
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -28,7 +28,6 @@ body {
 }
 .headerbar {
   height: 0.5em;
-  /*background-color: yellow;*/
   width: 100%;
   margin: 0;
   padding: 0;
@@ -40,17 +39,47 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.search {
+  border-style: solid;
+  border-color: rgb(233, 233, 233);
+  border-width: 1px;
+  box-sizing: border-box;
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+
+}
+.result {
+  overflow: hidden;
+  border-style: none solid solid;
+  border-width: 1px;
+  border-color: rgb(233, 233, 233);
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
 #outerheader {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
 }
 #innerheader {
-  /*background-color: rgb(255, 224, 102);*/
   background-color: rgb(121, 210, 166);
   width: 0%;
 }
-ul {
-  list-style: none;
+#searchresults{
+  max-width: 50em;
+  padding: 2em;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: "Open Sans", sans-serif;
 }
+
 ul li::before {
   content: "\2022";
   display: inline-block;
