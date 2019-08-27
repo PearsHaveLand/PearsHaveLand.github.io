@@ -2,8 +2,12 @@ var countries = [];
 
 // Updates the list of search results
 function updateSearch() {
+
+  // We want to clear the results first, so there's no repetitions
   clearResults();
   let val = document.getElementById("searchinput").value;
+
+  // For this project, I don't want suggestions to appear in an empty search box
   if (val != "") {
     searchList(val, countries);
   }
@@ -12,8 +16,7 @@ function updateSearch() {
 // Searches a list for the value provided
 function searchList(value) {
 
-  // Need length of list for iteration
-  let len = countries.length;
+  let len = countries.length; // Used for iteration
   let counter = 0;  // Number of results found
   let iterator = 0; // Iterates through countries list
 
@@ -54,7 +57,7 @@ function clearResults() {
   let parent = document.getElementById("searchresults");
   let len = resultList.length
 
-  // Iterates through each result in the list, removing each one
+  // Iterates through each result in the list, removing each existing result
   while(len > 0) {
     result = resultList[0];
     parent.removeChild(result);
