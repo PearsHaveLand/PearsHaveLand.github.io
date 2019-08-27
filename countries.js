@@ -1,15 +1,21 @@
+// Having these as global is useful, since it's used in different functions
+// I'd rather not pass this around as an argument
 var countries = [];
+var MAX_RESULTS = 5;
+var currResult = -1;
 
 // Updates the list of search results
 function updateSearch() {
+  if (window.event.keyCode != 38 && window.event.keyCode != 40) {
 
-  // We want to clear the results first, so there's no repetitions
-  clearResults();
-  let val = document.getElementById("searchinput").value;
+    // We want to clear the results first, so there's no repetitions
+    clearResults();
+    let val = document.getElementById("searchinput").value;
 
-  // For this project, I don't want suggestions to appear in an empty search box
-  if (val != "") {
-    searchList(val, countries);
+    // For this project, I don't want suggestions to appear in an empty search box
+    if (val != "") {
+      searchList(val, countries);
+    }
   }
 }
 
@@ -24,7 +30,7 @@ function searchList(value) {
   let valUpper = value.toUpperCase();
 
   // Iterates through entire list, displaying top 5 results
-  while (iterator < len && counter < 5) {
+  while (iterator < len && counter < MAX_RESULTS) {
 
     // Used for case-insensitive comparison
     let countryUpper = countries[iterator].toUpperCase();
@@ -47,6 +53,7 @@ function renderResult(result) {
   // "result" nodes are easy to identify by their classname
   let node = document.createElement("div");
   node.classList.add("result");
+  node.tabIndex = 0;
   node.innerHTML += result;
   results.appendChild(node);
 }
@@ -63,7 +70,39 @@ function clearResults() {
     parent.removeChild(result);
     len = resultList.length;
   }
+  currResult = -1;
+}
 
+// Changes the focus to a different result, highlighting the next item
+function handleKeyDown() {
+  keyEvent = window.event.keyCode;
+
+  // If up or down arrow
+  if (keyEvent == 38 || keyEvent == 40) {
+
+    let resultList = document.getElementsByClassName("result");
+    let resultLen = Math.min(resultList.length, MAX_RESULTS);
+    let oldResult = currResult;
+
+    if (resultLen > 0) {
+      // handle up arrow
+      if (keyEvent == 38) {
+        currResult = (currResult - 1) % resultLen;
+      }
+      // handle down arrow
+      else if (keyEvent == 40) {
+        currResult = (currResult + 1) % resultLen;
+      }
+      if (currResult < 0) {
+        currResult = 0;
+      }
+
+      if (oldResult != -1) {
+        document.getElementById("highlighted").id = "";
+      }
+      resultList[currResult].id = "highlighted";
+    }
+  }
 }
 
 window.onload = function() {
@@ -269,7 +308,7 @@ window.onload = function() {
     "Zimbabwe"
   ];
 
-  // Add event listener with parameters
   let inputField = document.getElementById("searchinput");
   inputField.addEventListener("keyup", updateSearch);
+  document.addEventListener("keydown", handleKeyDown);
 };
