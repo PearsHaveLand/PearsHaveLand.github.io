@@ -6,28 +6,14 @@ var currResult = -1;
 
 // Updates the list of search results
 function updateSearch() {
-  let keyEvent = window.event.keyCode;
+  // We want to clear the results first, so there's no repetitions
+  clearResults();
 
-  // On arrow keys, we don't want to remove results, since we're highlighting existing ones
-  if (!(keyEvent >= 37 && keyEvent <= 40)) {
+  let val = document.getElementById("searchinput").value;
 
-    // We want to clear the results first, so there's no repetitions
-    clearResults();
-  }
-
-  // Only refresh results on backspace or letter
-  if ((keyEvent == 8 || keyEvent == 32 || (keyEvent >= 65 && keyEvent <= 90))) {
-
-    // If the key pressed was not ESC, get new results
-    if (window.event.keyCode != 27){
-
-      let val = document.getElementById("searchinput").value;
-
-      // For this project, I don't want suggestions to appear in an empty search box
-      if (val != "") {
-        searchList(val, countries);
-      }
-    }
+  // For this project, I don't want suggestions to appear in an empty search box
+  if (val != "") {
+    searchList(val, countries);
   }
 }
 
@@ -348,6 +334,6 @@ window.onload = function() {
   ];
 
   let inputField = document.getElementById("searchinput");
-  inputField.addEventListener("keyup", updateSearch);
+  inputField.addEventListener("input", updateSearch);
   document.addEventListener("keydown", handleKeyDown);
 };
