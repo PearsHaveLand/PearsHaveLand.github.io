@@ -128,9 +128,7 @@ function handleKeyDown() {
       if (currResult < 0) {
         currResult = 0;
       }
-      if (oldResult != -1) {
-        undoHighlight(document.getElementById("highlighted"));
-      }
+      undoHighlight(document.getElementById("highlighted"));
       highlight(resultList[currResult], oldResult);
     }
   }
