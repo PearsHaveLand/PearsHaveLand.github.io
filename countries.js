@@ -6,15 +6,23 @@ var currResult = -1;
 
 // Updates the list of search results
 function updateSearch() {
-  if (window.event.keyCode != 38 && window.event.keyCode != 40) {
+  let keyEvent = window.event.keyCode;
 
-    // We want to clear the results first, so there's no repetitions
-    clearResults();
-    let val = document.getElementById("searchinput").value;
+  // We want to clear the results first, so there's no repetitions
+  clearResults();
 
-    // For this project, I don't want suggestions to appear in an empty search box
-    if (val != "") {
-      searchList(val, countries);
+  // Only refresh results on backspace or letter
+  if (keyEvent == 8 || (keyEvent >= 65 && keyEvent <= 90)) {
+
+    // If the key pressed was not ESC, get new results
+    if (window.event.keyCode != 27){
+
+      let val = document.getElementById("searchinput").value;
+
+      // For this project, I don't want suggestions to appear in an empty search box
+      if (val != "") {
+        searchList(val, countries);
+      }
     }
   }
 }
@@ -53,7 +61,7 @@ function renderResult(result) {
   // "result" nodes are easy to identify by their classname
   let node = document.createElement("div");
   node.classList.add("result");
-  node.tabIndex = 0;
+  //node.tabIndex = 0;
   node.innerHTML += result;
   results.appendChild(node);
 }
