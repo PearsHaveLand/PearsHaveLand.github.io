@@ -74,7 +74,8 @@ function renderResult(result) {
 function handleMouseOver() {
   let node = event.target || event.srcElement;
   if (currResult != -1) {
-    undoHighlight(document.getElementById("highlighted"))
+    let highlightedNode = document.getElementById("highlighted");
+    undoHighlight(document.getElementById("highlighted"));
   }
   highlight(node);
 }
@@ -140,7 +141,9 @@ function highlight(node) {
 }
 
 function undoHighlight(node){
-  node.id = "";
+  if (node != null) {
+    node.id = "";
+  }
 }
 
 window.onload = function() {
