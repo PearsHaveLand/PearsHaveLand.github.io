@@ -9,14 +9,14 @@ function updateSearch() {
   let keyEvent = window.event.keyCode;
 
   // On arrow keys, we don't want to remove results, since we're highlighting existing ones
-  if (keyEvent <= 37 && keyEvent >= 40) {
+  if (!(keyEvent >= 37 && keyEvent <= 40)) {
 
     // We want to clear the results first, so there's no repetitions
     clearResults();
   }
 
   // Only refresh results on backspace or letter
-  if ((keyEvent == 8 || (keyEvent >= 65 && keyEvent <= 90))) {
+  if ((keyEvent == 8 || keyEvent == 32 || (keyEvent >= 65 && keyEvent <= 90))) {
 
     // If the key pressed was not ESC, get new results
     if (window.event.keyCode != 27){
@@ -65,9 +65,25 @@ function renderResult(result) {
   // "result" nodes are easy to identify by their classname
   let node = document.createElement("div");
   node.classList.add("result");
-  //node.tabIndex = 0;
+  node.addEventListener("mouseover", handleMouseOver);
+  node.addEventListener("mouseout", handleMouseOff);
   node.innerHTML += result;
   results.appendChild(node);
+}
+
+function handleMouseOver() {
+  let node = event.target || event.srcElement;
+  if (currResult != -1) {
+    undoHighlight(document.getElementById("highlighted"))
+  }
+  highlight(node);
+}
+
+function handleMouseOff() {
+  let node = event.target || event.srcElement;
+  if (node.id == "highlighted") {
+    undoHighlight(node);
+  }
 }
 
 // Clears all results from the screen
@@ -100,6 +116,9 @@ function handleKeyDown() {
       // handle up arrow
       if (keyEvent == 38) {
         currResult = (currResult - 1) % resultLen;
+        if (currResult == -1) {
+          currResult = resultLen - 1;
+        }
       }
       // handle down arrow
       else if (keyEvent == 40) {
@@ -108,22 +127,20 @@ function handleKeyDown() {
       if (currResult < 0) {
         currResult = 0;
       }
-      highlight(resultList[currResult], oldResult);
-      /*
       if (oldResult != -1) {
-        document.getElementById("highlighted").id = "";
+        undoHighlight(document.getElementById("highlighted"));
       }
-      resultList[currResult].id = "highlighted";
-      */
+      highlight(resultList[currResult], oldResult);
     }
   }
 }
 
-function highlight(node, oldResult) {
-  if (oldResult != -1) {
-    document.getElementById("highlighted").id = "";
-  }
+function highlight(node) {
   node.id = "highlighted";
+}
+
+function undoHighlight(node){
+  node.id = "";
 }
 
 window.onload = function() {
