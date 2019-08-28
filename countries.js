@@ -8,11 +8,15 @@ var currResult = -1;
 function updateSearch() {
   let keyEvent = window.event.keyCode;
 
-  // We want to clear the results first, so there's no repetitions
-  clearResults();
+  // On arrow keys, we don't want to remove results, since we're highlighting existing ones
+  if (keyEvent <= 37 && keyEvent >= 40) {
+
+    // We want to clear the results first, so there's no repetitions
+    clearResults();
+  }
 
   // Only refresh results on backspace or letter
-  if (keyEvent == 8 || (keyEvent >= 65 && keyEvent <= 90)) {
+  if ((keyEvent == 8 || (keyEvent >= 65 && keyEvent <= 90))) {
 
     // If the key pressed was not ESC, get new results
     if (window.event.keyCode != 27){
@@ -104,13 +108,22 @@ function handleKeyDown() {
       if (currResult < 0) {
         currResult = 0;
       }
-
+      highlight(resultList[currResult], oldResult);
+      /*
       if (oldResult != -1) {
         document.getElementById("highlighted").id = "";
       }
       resultList[currResult].id = "highlighted";
+      */
     }
   }
+}
+
+function highlight(node, oldResult) {
+  if (oldResult != -1) {
+    document.getElementById("highlighted").id = "";
+  }
+  node.id = "highlighted";
 }
 
 window.onload = function() {
