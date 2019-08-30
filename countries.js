@@ -48,21 +48,17 @@ function searchList(value) {
 // Displays each search result on-screen
 function renderResult(match, result) {
   let results = document.getElementById("searchresults");
-  let replaceVal = "<b>" + match + "</b>";
-  /*
-  let displayVal = result;
-  displayVal.replace(match, replaceVal);
-  console.log("result=" + result);
-  console.log("match=" + match);
-  console.log("replaceval=" + replaceVal);
-  */
+  let replaceVal = '<span style="font-weight:bold">' + match + '</span>';
 
   // Create new "result" node for each result
   // "result" nodes are easy to identify by their classname
   let node = document.createElement("div");
+
   node.classList.add("result");
-  node.addEventListener("mouseover", handleMouseOver);
-  node.addEventListener("mouseout", handleMouseOff);
+
+  // Use mouseenter and mouseleave to handle entering and leaving child text
+  node.addEventListener("mouseenter", handleMouseOver);
+  node.addEventListener("mouseleave", handleMouseOff);
 
   node.innerHTML += result.replace(match, replaceVal);
   results.appendChild(node);
@@ -70,19 +66,15 @@ function renderResult(match, result) {
 
 function handleMouseOver() {
   let node = event.target || event.srcElement;
-  let parentClass = node.parentNode.className;
-  if (currResult != -1 && parentClass != "result") {
-    let highlightedNode = document.getElementById("highlighted");
-    undoHighlight(document.getElementById("highlighted"));
-  }
+  let highlightedNode = document.getElementById("highlighted");
+  undoHighlight(document.getElementById("highlighted"));
   highlight(node);
 }
 
 function handleMouseOff() {
   let node = event.target || event.srcElement;
-  if (node.id == "highlighted") {
-    undoHighlight(node);
-  }
+  let parentClass = node.parentNode.classList[0];
+  undoHighlight(node);
 }
 
 // Clears all results from the screen
