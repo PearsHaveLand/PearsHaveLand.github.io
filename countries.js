@@ -31,11 +31,13 @@ function searchList(value) {
   while (iterator < len && counter < MAX_RESULTS) {
 
     // Used for case-insensitive comparison
-    let countryUpper = countries[iterator].toUpperCase();
+    let re = new RegExp(value, "i");
 
     // Perform comparison and render results
-    if(countryUpper.includes(valUpper)) {
-      renderResult(countries[iterator]);
+    let matchedVal = countries[iterator].match(re)
+
+    if (matchedVal != null) {
+      renderResult(matchedVal, countries[iterator]);
       counter++;
     }
 
@@ -44,8 +46,16 @@ function searchList(value) {
 }
 
 // Displays each search result on-screen
-function renderResult(result) {
+function renderResult(match, result) {
   let results = document.getElementById("searchresults");
+  let replaceVal = "<b>" + match + "</b>";
+  /*
+  let displayVal = result;
+  displayVal.replace(match, replaceVal);
+  console.log("result=" + result);
+  console.log("match=" + match);
+  console.log("replaceval=" + replaceVal);
+  */
 
   // Create new "result" node for each result
   // "result" nodes are easy to identify by their classname
@@ -53,13 +63,15 @@ function renderResult(result) {
   node.classList.add("result");
   node.addEventListener("mouseover", handleMouseOver);
   node.addEventListener("mouseout", handleMouseOff);
-  node.innerHTML += result;
+
+  node.innerHTML += result.replace(match, replaceVal);
   results.appendChild(node);
 }
 
 function handleMouseOver() {
   let node = event.target || event.srcElement;
-  if (currResult != -1) {
+  let parentClass = node.parentNode.className;
+  if (currResult != -1 && parentClass != "result") {
     let highlightedNode = document.getElementById("highlighted");
     undoHighlight(document.getElementById("highlighted"));
   }
@@ -334,6 +346,8 @@ window.onload = function() {
   ];
 
   let inputField = document.getElementById("searchinput");
+
+  // Using the "input" event allows mobile functionality
   inputField.addEventListener("input", updateSearch);
   document.addEventListener("keydown", handleKeyDown);
 };
