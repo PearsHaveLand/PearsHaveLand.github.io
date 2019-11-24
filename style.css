@@ -83,9 +83,4 @@ body {
   background-color: #4073bf;
   color: white;
 }
-ul li::before {
-  content: "\2022";
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em
-}
+
