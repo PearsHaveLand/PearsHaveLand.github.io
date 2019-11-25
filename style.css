@@ -14,12 +14,7 @@ body {
   line-height: 1.4;
   padding: 2em;
   margin: auto;
-  margin-top: 2em;
-  margin-bottom: 1em;
   background-color: rgb(255, 255, 255);
-}
-.pagebackground {
-  background-color: rgb(233, 233, 233);
 }
 .headerbar {
   height: 0.5em;
