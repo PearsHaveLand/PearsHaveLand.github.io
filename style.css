@@ -15,7 +15,9 @@ body {
   padding: 2em;
   margin: auto;
   background-color: rgb(255, 255, 255);
+  border: none;
 }
+
 .headerbar {
   height: 0.5em;
   width: 100%;
