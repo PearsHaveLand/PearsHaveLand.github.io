@@ -19,21 +19,6 @@ h1 {
   margin: auto;
   border: none;
 }
-
-.headerbar {
-  height: 0.5em;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .search {
   border-style: solid;
   border-color: rgb(233, 233, 233);
@@ -55,13 +40,6 @@ h1 {
   padding: 1em;
   height: 100%;
   width: 100%;
-}
-#outerheader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
-}
-#innerheader {
-  background-color: rgb(121, 210, 166);
-  width: 0%;
 }
 #searchresults{
   max-width: 50em;
