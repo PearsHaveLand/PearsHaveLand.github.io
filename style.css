@@ -19,36 +19,4 @@ h1 {
   margin: auto;
   border: none;
 }
-.search {
-  border-style: solid;
-  border-color: rgb(233, 233, 233);
-  border-width: 1px;
-  box-sizing: border-box;
-  padding: 1em;
-  height: 100%;
-  width: 100%;
-  font-size: 16px;
-}
-.result {
-  overflow: hidden;
-  border-style: none solid solid;
-  border-width: 1px;
-  border-color: rgb(233, 233, 233);
-  background-color: white;
-  box-sizing: border-box;
-  padding: 1em;
-  height: 100%;
-  width: 100%;
-}
-#searchresults{
-  max-width: 50em;
-  padding: 2em;
-  margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-#highlighted{
-  background-color: #4073bf;
-  color: white;
-}
 
