@@ -2,22 +2,26 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" type="text/css" href="style.css">
-  	<link rel="stylesheet" type="text/css" href="search.css">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="countries.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
   </head>
   <body class="pagebackground">
-    <div class="topbar">
+    <div class="topbar jumbotron">
   	   <h1>Country Search Box</h1>
-  	</div>
-	<p class="pagecontent"> This page was inspired by account creation processes throughout the
-Internet. On many sites, you must select a country of residence via a dropdown
-menu. <strong>This is something I strongly dislike</strong>. I know some sites
-use a search bar solution, so I decided to implement my own version. <br>
-	So far, there is no click functionality. All that's working at the moment
-is just text search and highlight.
-	</p>
-      <div id="searchresults">
+    </div>
+  <div class="container">
+    <p class="pagecontent"> This page was inspired by account creation processes throughout the
+      Internet. On many sites, you must select a country of residence via a dropdown
+      menu. I have a <strong>strong</strong> disdain for long dropdown menus. I know some sites
+      use a search bar solution, so I decided to implement my own version. <br>
+        So far, there is no click functionality. All that's working at the moment
+      is just text search and highlight.
+        </p>      
+  </div>
+    <div id="searchresults">
           <input id="searchinput" class="search" placeholder="Type your country name here" type="text"/>
       </div>
   </body>
