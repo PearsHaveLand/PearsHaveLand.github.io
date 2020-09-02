@@ -4,7 +4,16 @@ body{
 }
 h1, h2{
   margin: 0;
+  margin-bottom: .5rem;
 }
+.section{
+  margin-bottom: 2em;
+}
+/*
+h4, h5{
+  margin: 0;
+}
+*/
 .topbar {
   padding: 1em;
   text-align: center;
