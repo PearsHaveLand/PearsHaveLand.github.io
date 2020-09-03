@@ -1,6 +1,8 @@
 .search {
-  border-style: solid;
-  border-color: rgb(233, 233, 233);
+  border-style: none;
+  border-color: #3b4252;
+  background-color: #3b4252;
+  color: #d8dee9;
   border-width: 1px;
   box-sizing: border-box;
   padding: 1em;
@@ -12,8 +14,7 @@
   overflow: hidden;
   border-style: none solid solid;
   border-width: 1px;
-  border-color: rgb(233, 233, 233);
-  /*background-color: #d3d3d3;*/
+  border-color: #4c566a;
   box-sizing: border-box;
   padding: 1em;
   height: 100%;
@@ -23,7 +24,7 @@
   max-width: 50em;
 }
 #highlighted{
-  background-color: #53ac80;
-  color: white;
+/*  background-color: #53ac80;*/
+  background-color: #434c5e;
 }
 			       

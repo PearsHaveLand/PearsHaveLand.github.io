@@ -1,6 +1,7 @@
 body{
-  margin: 0;
-  padding: 0;
+  color: #d8dee9;
+  background-color: #2e3440;
+  min-height: 100vh;
 }
 h1, h2{
   margin: 0;
@@ -9,14 +10,14 @@ h1, h2{
 .section{
   margin-bottom: 2em;
 }
-/*
-h4, h5{
-  margin: 0;
-}
-*/
 .topbar {
   padding: 1em;
   text-align: center;
+  background-color: #3b4252;
+}
+.links {
+  padding-top: 1em; 
+  border-top: 1px solid #d8dee9;
 }
 .pagecontent {
   max-width: 50em;
