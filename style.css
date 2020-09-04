@@ -1,6 +1,18 @@
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord6: #eceff4;
+  --jumbotron-background: var(--nord1);
+  --content-background: var(--nord0);
+  --nav-hover-background: var(--nord3);
+  --body-text-color: var(--nord4);
+  --link-hover-color: var(--nord6);
+}
 body{
-  color: #d8dee9;
-  background-color: #2e3440;
+  color: var(--body-text-color);
+  background-color: var(--content-background);
   min-height: 100vh;
 }
 h1, h2{
@@ -11,7 +23,7 @@ a {
   color: #abb9cf;
 }
 a:hover {
-  color: #eceff4;
+  color: var(--link-hover-color);
 }
 .section{
   margin-top: 2em;
@@ -19,11 +31,11 @@ a:hover {
 .topbar {
   padding-top: 1em;
   text-align: center;
-  background-color: #3b4252;
+  background-color: var(--jumbotron-background);
 }
 .links {
   padding-top: 1em; 
-  border-top: 1px solid #d8dee9;
+  border-top: 1px solid var(--body-text-color);
 }
 .pagecontent {
   max-width: 50em;
@@ -31,8 +43,8 @@ a:hover {
   border: none;
 }
 .nav-item:hover {
-  background-color: #434c5e;
+  background-color: var(--nav-hover-background);
 }
 .nav-link:hover {
-  color: #d8dee9;
+  color: var(--body-text-color);
 }
