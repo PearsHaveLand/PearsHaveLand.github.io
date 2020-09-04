@@ -357,5 +357,4 @@ window.onload = function() {
   inputField.addEventListener("focus", focusInput);
   inputField.addEventListener("blur", blurInput);
   document.addEventListener("keydown", handleKeyDown);
-  console.log('yeyeye');
 };

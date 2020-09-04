@@ -2,9 +2,9 @@
 
 .search {
   border-style: solid;
-  border-color: #3b4252;
-  background-color: #3b4252;
-  color: #d8dee9;
+  border-color: var(--jumbotron-background);
+  background-color: var(--jumbotron-background);
+  color: var(--body-text-color);
   border-width: 1px;
   box-sizing: border-box;
   padding: 1em;
@@ -16,7 +16,7 @@
   overflow: hidden;
   border-style: none solid solid;
   border-width: 1px;
-  border-color: #4c566a;
+  border-color: var(--nav-hover-background);
   box-sizing: border-box;
   padding: 1em;
   height: 100%;
@@ -26,7 +26,6 @@
   max-width: 50em;
 }
 #highlighted{
-/*  background-color: #53ac80;*/
-  background-color: #434c5e;
+  background-color: var(--dropdown-select-color);
 }
 			       
