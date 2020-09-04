@@ -4,6 +4,7 @@
   --nord3: #4c566a;
   --nord4: #d8dee9;
   --nord6: #eceff4;
+  --link-color: #abb9cf;
   --jumbotron-background: var(--nord1);
   --content-background: var(--nord0);
   --nav-hover-background: var(--nord3);
@@ -20,7 +21,7 @@ h1, h2{
   margin-bottom: .5rem;
 }
 a {
-  color: #abb9cf;
+  color: var(--link-color);
 }
 a:hover {
   color: var(--link-hover-color);
@@ -47,4 +48,16 @@ a:hover {
 }
 .nav-link:hover {
   color: var(--body-text-color);
+}
+.togglebtn, .nav-link.togglebtn{
+  color: var(--link-color);
+  background-color: var(--jumbotron-background);
+  border: none;
+  border-radius:0px;
+}
+.togglebtn:hover {
+  color: var(--link-hover-color);
+  background-color: var(--nav-hover-background);
+  border: none;
+  border-radius: 0px;
 }
