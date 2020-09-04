@@ -12,6 +12,10 @@
   margin: 0;
   padding: 0;
 }
+.lorem-ipsum {
+  /*color: #4c566a; */
+  color:  #abb9cf;
+}
 #outerheader {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
 }

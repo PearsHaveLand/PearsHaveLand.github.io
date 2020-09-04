@@ -7,11 +7,17 @@ h1, h2{
   margin: 0;
   margin-bottom: .5rem;
 }
+a {
+  color: #abb9cf;
+}
+a:hover {
+  color: #eceff4;
+}
 .section{
-  margin-bottom: 2em;
+  margin-top: 2em;
 }
 .topbar {
-  padding: 1em;
+  padding-top: 1em;
   text-align: center;
   background-color: #3b4252;
 }
@@ -23,4 +29,10 @@ h1, h2{
   max-width: 50em;
   margin: auto;
   border: none;
+}
+.nav-item:hover {
+  background-color: #434c5e;
+}
+.nav-link:hover {
+  color: #d8dee9;
 }
