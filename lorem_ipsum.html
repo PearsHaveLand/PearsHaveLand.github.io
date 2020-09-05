@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="progress_bar.css">
   <script src="progress_bar.js"></script>
+  <script src="darkmode.js"></script>
 </head>
 <body>
 
@@ -25,6 +26,11 @@
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="search.html">Country Search</a>
+    </li>
+    <li class="btn-group-toggle nav-item togglebtn">
+      <label class="btn nav-link active togglebtn">
+        <input type="checkbox" class="togglebtn" id="toggledark" onclick="toggleDarkMode()"> Toggle </input>
+      </label>
     </li>
   </ul>
 </div>

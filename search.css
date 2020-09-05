@@ -1,5 +1,10 @@
 @import url("style.css");
 
+:root {
+  --selection-border-focused-color: var(--nord3);
+  --selection-border-blur-color: var(--nord1);
+}
+
 .search {
   border-style: solid;
   border-color: var(--jumbotron-background);
@@ -16,7 +21,7 @@
   overflow: hidden;
   border-style: none solid solid;
   border-width: 1px;
-  border-color: var(--nav-hover-background);
+  border-color: var(--selection-border-focused-color);
   box-sizing: border-box;
   padding: 1em;
   height: 100%;

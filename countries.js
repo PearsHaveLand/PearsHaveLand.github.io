@@ -4,9 +4,6 @@ var countries = [];
 var MAX_RESULTS = 5;
 var currResult = -1;
 
-var NORD1 = "#3b4252";
-var NORD3 = "#4c566a";
-
 // Updates the list of search results
 function updateSearch() {
   // We want to clear the results first, so there's no repetitions
@@ -139,12 +136,12 @@ function undoHighlight(node){
 
 function focusInput()
 {
-  document.getElementById("searchinput").style.border = '1px solid' + NORD3;
+  document.getElementById("searchinput").style.border = '1px solid' + selectionBorderFocusedColor;
 }
 
 function blurInput(node)
 {
-  document.getElementById("searchinput").style.border = '1px solid' + NORD1;
+  document.getElementById("searchinput").style.border = '1px solid' + selectionBorderBlurColor;
 }
 
 window.onload = function() {
