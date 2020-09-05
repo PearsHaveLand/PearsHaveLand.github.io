@@ -4,6 +4,8 @@
   <title>Progress Bar Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="progress_bar.css">
@@ -15,17 +17,20 @@
 <div class="headerbar" id="outerheader">
   <div class="headerbar" id="innerheader"></div>
 </div>
-<div class="jumbotron-fluid topbar">
-  <h1>Practice Project: Progress Bar</h1>
+<div class="topbar jumbotron-fluid">
+  <h1 >Pearce Haviland</h1>
   <ul class="nav justify-content-center">
     <li class="nav-item">
       <a class="nav-link active" href="index.html">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="lorem_ipsum.html">Progress Bar</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="search.html">Country Search</a>
+    <li class="nav-item dropdown">
+      <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Projects
+      </button>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="lorem_ipsum.html">Progress Bar</a>
+        <a class="dropdown-item" href="search.html">Country Search</a>
+      </div>
     </li>
     <li class="btn-group-toggle nav-item togglebtn">
       <label class="btn nav-link active togglebtn">
@@ -33,7 +38,7 @@
       </label>
     </li>
   </ul>
-</div>
+  </div>
 <div class="pagecontent container">
   <div class="section">
     <h2>Description:</h2>

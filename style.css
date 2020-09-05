@@ -45,13 +45,13 @@ a:hover {
   margin: auto;
   border: none;
 }
-.nav-item:hover {
+.nav-item:hover, .dropdown-toggle:hover, .dropdown-item:hover {
   background-color: var(--nav-hover-background);
 }
-.nav-link:hover {
+.nav-link:hover, .dropdown-toggle:hover, .dropdown-item:hover {
   color: var(--body-text-color);
 }
-.togglebtn, .nav-link.togglebtn{
+.togglebtn, .dropdown-toggle, .dropdown-menu, .dropdown-item, .nav-link.togglebtn{
   color: var(--link-color);
   background-color: var(--jumbotron-background);
   border: none;
@@ -62,4 +62,11 @@ a:hover {
   background-color: var(--nav-hover-background);
   border: none;
   border-radius: 0px;
+}
+.dropdown, .nav-item {
+  float: left;
+  box-sizing: border-box;
+}
+#dropdownMenuButton{
+  height: 100%;
 }

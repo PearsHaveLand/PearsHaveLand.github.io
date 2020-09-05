@@ -145,14 +145,7 @@ function blurInput(node)
 }
 
 window.onload = function() {
-  /*
-  console.log(sessionStorage.getItem("colorTheme"));
-  if (sessionStorage.getItem("colorTheme") == "light")
-  {
-    console.log("toggling");
-    setTheme("light");
-  }
-  */
+
   // Load country list for searching
   countries = [
     "Afghanistan",
