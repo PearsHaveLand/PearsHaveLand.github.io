@@ -5,6 +5,7 @@ var nord3 = "#4c566a";
 var nord4 = "#d8dee9";
 var nord5 = "#e5e9f0";
 var nord6 = "#eceff4";
+var nord8 = "#88c0d0";
 var darkLinkColor = "#abb9cf";
 var colorTheme = "dark";
 var selectionBorderFocusedColor = nord3;
@@ -44,7 +45,6 @@ function setTheme(theme)
         document.documentElement.style.setProperty('--body-text-color', nord4);
         document.documentElement.style.setProperty('--link-hover-color', nord6);
         document.documentElement.style.setProperty('--link-color', darkLinkColor);
-        document.documentElement.style.setProperty('--nav-hover-background', nord3);
         document.documentElement.style.setProperty('--dropdown-select-color', nord2);
         document.documentElement.style.setProperty('--selection-border-focused-color', nord3);
         document.documentElement.style.setProperty('--selection-border-blur-color', nord1);
@@ -54,12 +54,11 @@ function setTheme(theme)
     }
     else
     {
-        document.documentElement.style.setProperty('--jumbotron-background', nord5);
+        document.documentElement.style.setProperty('--jumbotron-background', nord4);
         document.documentElement.style.setProperty('--content-background', nord6);
         document.documentElement.style.setProperty('--body-text-color', nord0);
         document.documentElement.style.setProperty('--link-hover-color', nord1);
         document.documentElement.style.setProperty('--link-color', nord3);
-        document.documentElement.style.setProperty('--nav-hover-background', nord4);
         document.documentElement.style.setProperty('--dropdown-select-color', darkLinkColor);
         document.documentElement.style.setProperty('--selection-border-focused-color', darkLinkColor);
         document.documentElement.style.setProperty('--selection-border-blur-color', nord4);

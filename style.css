@@ -5,13 +5,14 @@
   --nord3: #4c566a;
   --nord4: #d8dee9;
   --nord6: #eceff4;
+  --nord8: #88c0d0;
   --link-color: #abb9cf;
   --jumbotron-background: var(--nord1);
   --content-background: var(--nord0);
   --nav-hover-background: var(--nord3);
   --body-text-color: var(--nord4);
-  --link-hover-color: var(--nord6);
-  --dropdown-select-color: var(--nord2);
+  --nav-hover-background: var(--nord8);
+  --dropdown-select-color: var(--nord8);
 }
 body{
   color: var(--body-text-color);
@@ -45,11 +46,10 @@ a:hover {
   margin: auto;
   border: none;
 }
-.nav-item:hover, .dropdown-toggle:hover, .dropdown-item:hover {
+.nav-item:hover, .nav-link:hover, .dropdown-toggle:hover, .dropdown-item:hover, #dropdownMenuButton:focus{
   background-color: var(--nav-hover-background);
-}
-.nav-link:hover, .dropdown-toggle:hover, .dropdown-item:hover {
-  color: var(--body-text-color);
+  color: var(--nord0);
+  outline: 0;
 }
 .togglebtn, .dropdown-toggle, .dropdown-menu, .dropdown-item, .nav-link.togglebtn{
   color: var(--link-color);
@@ -57,8 +57,11 @@ a:hover {
   border: none;
   border-radius:0px;
 }
+.dropdown-menu {
+  padding: 0;
+}
 .togglebtn:hover {
-  color: var(--link-hover-color);
+  color: var(--nord0);
   background-color: var(--nav-hover-background);
   border: none;
   border-radius: 0px;
@@ -69,7 +72,4 @@ a:hover {
 }
 #dropdownMenuButton{
   height: 100%;
-}
-#dropdownMenuButton:focus{
-  outline: none;
 }
