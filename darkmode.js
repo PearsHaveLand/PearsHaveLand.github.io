@@ -45,7 +45,6 @@ function setTheme(theme)
         document.documentElement.style.setProperty('--body-text-color', nord4);
         document.documentElement.style.setProperty('--link-hover-color', nord6);
         document.documentElement.style.setProperty('--link-color', darkLinkColor);
-        document.documentElement.style.setProperty('--dropdown-select-color', nord2);
         document.documentElement.style.setProperty('--selection-border-focused-color', nord3);
         document.documentElement.style.setProperty('--selection-border-blur-color', nord1);
         selectionBorderFocusedColor = nord3;
@@ -59,7 +58,6 @@ function setTheme(theme)
         document.documentElement.style.setProperty('--body-text-color', nord0);
         document.documentElement.style.setProperty('--link-hover-color', nord1);
         document.documentElement.style.setProperty('--link-color', nord3);
-        document.documentElement.style.setProperty('--dropdown-select-color', darkLinkColor);
         document.documentElement.style.setProperty('--selection-border-focused-color', darkLinkColor);
         document.documentElement.style.setProperty('--selection-border-blur-color', nord4);
         selectionBorderFocusedColor = darkLinkColor;

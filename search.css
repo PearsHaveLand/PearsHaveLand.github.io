@@ -6,31 +6,36 @@
 }
 
 .search {
-  border-style: solid;
-  border-color: var(--jumbotron-background);
+  outline: 1px solid var(--selection-border-blur-color);
   background-color: var(--jumbotron-background);
   color: var(--body-text-color);
-  border-width: 1px;
   box-sizing: border-box;
   padding: 1em;
   height: 100%;
   width: 100%;
   font-size: 16px;
+  outline: 0;
+  border: none;
 }
 .result {
   overflow: hidden;
-  border-style: none solid solid;
-  border-width: 1px;
-  border-color: var(--selection-border-focused-color);
   box-sizing: border-box;
   padding: 1em;
   height: 100%;
   width: 100%;
 }
+
+input[type="text"]:focus{
+  outline: 1px solid var(--selection-border-focused-color);
+}
 #searchresults{
   max-width: 50em;
+  padding: 0;
+}
+#searchresults:focus-within{
+  outline: 1px solid var(--selection-border-focused-color);
 }
 #highlighted{
   background-color: var(--dropdown-select-color);
-}
-			       
+  color: var(--nord0);
+}		       
