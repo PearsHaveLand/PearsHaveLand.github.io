@@ -134,17 +134,6 @@ function undoHighlight(node){
   }
 }
 
-/*
-function focusInput()
-{
-  document.getElementById("searchinput").style.border = '1px solid' + selectionBorderFocusedColor;
-}
-
-function blurInput(node)
-{
-  document.getElementById("searchinput").style.border = '1px solid' + selectionBorderBlurColor;
-}
-*/
 window.onload = function() {
 
   // Load country list for searching
@@ -349,10 +338,6 @@ window.onload = function() {
   ];
 
   let inputField = document.getElementById("searchinput");
-  //let searchField = document.getElementById("searchresults");
-  // Using the "input" event allows mobile functionality
   inputField.addEventListener("input", updateSearch);
-  //inputField.addEventListener("focus", focusInput);
-  //inputField.addEventListener("blur", blurInput);
   document.addEventListener("keydown", handleKeyDown);
 };
