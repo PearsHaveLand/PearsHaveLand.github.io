@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cowboy Compare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="biggest_irons.css">
+    <script src="darkmode.js"></script>
+    <script src="biggest_irons.js"></script>
+  </head>
+  <body>
+    <div class="topbar jumbotron-fluid">
+      <h1 >Pearce Haviland</h1>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="lorem_ipsum.html">Progress Bar</a>
+            <a class="dropdown-item" href="search.html">Country Search</a>
+            <a class="dropdown-item" href="biggest_irons.html">Hunt Compare Tool</a>
+          </div>
+        </li>
+        <li class="btn-group-toggle nav-item togglebtn">
+          <label class="btn nav-link active togglebtn">
+            <input type="checkbox" class="togglebtn" id="toggledark" onclick="toggleDarkMode()"> Change Theme </input>
+          </label>
+        </li>
+      </ul>
+    </div>
+  <div class="pagecontent container">
+    <div class="section">
+      <h2> Description:</h2>
+      <p> This is a tool to compare in-game weapons from the video game <strong>Hunt: Showdown</strong>. 
+        I made this because I kept finding myself wanting to compare weapons against each other, but did
+         not want to launch the game. Also, a lot of the fan-made wikis are incomplete in this regard.
+      </p>
+    </div>
+  </div>
+  <div class="container-fluid" id="weapon_compare_container">
+    <datalist id="weapon_compare_datalist">
+    </datalist>
+
+    <div class="nav justify-content-center" id="weapon_selection" >
+      <!-- <label for="weapon1">Choose a weapon:</label> -->
+      <input class="nav-item weapon-select-item" list="weapon_compare_datalist" id="weapon_compare_searchbox1" name="weapon1" placeholder="Search for weapon 1" />
+      <button class="dropdown-toggle nav-item weapon-select-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Weapon 1 Ammo Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button class="dropdown-item" type="button">test</button>
+      </div>
+      <span class="weapon-select-item">VS</span>
+      <input class="nav-item weapon-select-item" placeholder="Search for weapon 2" list="weapon_compare_datalist" id="weapon_compare_searchbox2" name="weapon2" />
+      
+      <button class="dropdown-toggle nav-item weapon-select-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Weapon 2 Ammo Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button class="dropdown-item" type="button">test</button>
+      </div>
+    </div>
+      <div class="characteristic-card">
+        <h3>
+          Damage
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label for="weapon1_dmg" class="weapon1-name">Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_dmg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="364"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label for="weapon2_dmg" class="weapon2-name">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_dmg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="364"></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+
+      <div class="characteristic-card">
+        <h3>
+          Effective Range (meters)
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_range" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_range" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_range">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_range" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="300"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+      <div class="characteristic-card">
+        <h3>
+          Rate of Fire (rounds/min)
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_rof" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_rof" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_rof">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_rof" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="characteristic-card">
+        <h3>
+          Handling
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_hdl" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_hdl" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_hdl">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_hdl" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>    
+      </div>
+      
+      <div class="characteristic-card">
+        <h3>
+          Reload Time (sec)
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_rld" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_rld" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_rld">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_rld" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+      <div class="characteristic-card">
+        <h3>
+          Muzzle Velocity (m/sec)
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_vel" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_vel" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_vel">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_vel" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+      <div class="characteristic-card">
+        <h3>
+          Melee Damage
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_mel" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_mel" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_mel">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_mel" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+      <div class="characteristic-card">
+        <h3>
+          Heavy Melee Damage
+        </h3>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon1-name" for="weapon_hvy" weapon_name>Weapon 1:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon1_bar" id="weapon1_hvy" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2 weapon_name">
+            <label class="weapon2-name" for="weapon_hvy">Weapon 2:</label>
+          </div>
+          <div class="col-sm">
+            <div class="progress">
+              <div class="progress-bar weapon2_bar" id="weapon2_hvy" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+    </div>
+  </body>
+</html>
