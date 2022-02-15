@@ -4,12 +4,16 @@
   --nord2: #434c5e;
   --nord3: #4c566a;
   --nord4: #d8dee9;
+  --nord5: #e5e9f0;
   --nord6: #eceff4;
+  --nord7: #8fbcbb;
   --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
   --link-color: #abb9cf;
   --jumbotron-background: var(--nord1);
   --content-background: var(--nord0);
-  --nav-hover-background: var(--nord3);
   --body-text-color: var(--nord4);
   --nav-hover-background: var(--nord8);
   --dropdown-select-color: var(--nord8);
