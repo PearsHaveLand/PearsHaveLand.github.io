@@ -232,6 +232,20 @@ function fill_weapons_datalist() {
      }
 }
 
+function toggle_desc() {
+    let desc_div = document.getElementById("description");
+    let toggle_btn = document.getElementById("description-toggle");
+    
+    if (desc_div.style.display === "none") {
+        desc_div.style.display = "block";
+        toggle_btn.innerHTML = "Hide Description";
+    }
+    else {
+        desc_div.style.display = "none";
+        toggle_btn.innerHTML = "Show Description";
+    }
+}
+
 function populate_weapons() {
     return {
         "berthier mle 1892": 

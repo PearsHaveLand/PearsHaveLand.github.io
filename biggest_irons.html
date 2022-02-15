@@ -37,11 +37,26 @@
     </div>
   <div class="pagecontent container">
     <div class="section">
+      <button class="togglebtn" id="description-toggle" onclick="toggle_desc()">Hide Description</button>
+      <div id="description">
       <h2> Description:</h2>
-      <p> This is a tool to compare in-game weapons from the video game <strong>Hunt: Showdown</strong>. 
-        I made this because I kept finding myself wanting to compare weapons against each other, but did
-         not want to launch the game. Also, a lot of the fan-made wikis are incomplete in this regard.
+      <p> This is a tool to compare weapons from the video game <strong>Hunt: Showdown</strong>.
+        The game involves players rootin', tootin', and shootin' in the bayou. The rootin' and tootin' is the
+        easy part, while the shootin' gets a little tough. 
+        <br>
+        This tool allows players to compare weapons in a PC-optimized interface without needing to launch the game, which is nice since the game takes
+        about 2 whole minutes to start on my computer. The purpose of this tool is to take some of the difficulty from the shootin' aspect of the game.
+        That way, players can focus more on the rootin' and tootin'.
+        <br>
+        Just type in the boxes below to search for the weapon of your choice. Depending on your browser, the weapon selection dropdown might not populate immediately.
+        Current issues include:
+        <ul>
+          <li>Some weapons are missing (I'm still typing them in!)</li>
+          <li>Ammo type selection has yet to be implemented</li>
+          <li>A few extra stats are yet to be implemented</li>
+        </ul>
       </p>
+      </div>
     </div>
   </div>
   <div class="container-fluid" id="weapon_compare_container">

@@ -1,12 +1,4 @@
 @import url("style.css");
-/*
-.bar {
-    position: relative;
-    height: 2em;
-    overflow: hidden;
-    border-radius: 3px;
-}
-*/
 
 input {
     background-color: var(--jumbotron-background);
@@ -21,21 +13,23 @@ h3 {
 
 .progress {
     background-color: var(--content-background);
-    height: 2rem;
+    height: 1.5rem;
 }
 
 .weapon1_bar {
     background-color: var(--nord7);
-    color: var(--content-background)
+    color: var(--nord5);
+    font-weight: bold;
+    text-align: right;
+    padding-right: 0.5rem
 }
 
 .weapon2_bar {
     background-color: var(--nord10);
-    color: var(--content-background)
-}
-
-.weapon_name {
+    color: var(--nord5);
+    font-weight: bold;
     text-align: right;
+    padding-right: 0.5rem
 }
 
 .characteristic-card {
