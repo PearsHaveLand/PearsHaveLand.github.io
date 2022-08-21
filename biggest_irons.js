@@ -37,7 +37,6 @@ window.onload = function() {
     weapons = populate_weapons();
     fill_weapons_datalist();
     generate_stat_display_cards();
-    console.log(stat_display_cards);
     document.getElementById("weapon_compare_searchbox1").oninput = update_weapon_stat_cards;
     document.getElementById("weapon_compare_searchbox2").oninput = update_weapon_stat_cards;
     update_weapon_stat_cards();
