@@ -145,10 +145,10 @@ function populate_weapons() {
             "muzzle_velocity": 0,
             "melee_damage": 0,
             "heavy_melee_damage": 0,
-            "cost": 0,
+            "cost": 0,            
             "mag_size": 0,
             "reserve_ammo": 0,
-            "special_ammo_list": "berthier"
+            "special_ammo_list": "none"
         },
         "berthier mle 1892": 
         {
@@ -180,6 +180,23 @@ function populate_weapons() {
             "melee_damage": 27,
             "heavy_melee_damage": 54,
             "cost": 388,
+            "mag_size": 3,
+            "reserve_ammo": 12,
+            "special_ammo_list": "berthier"
+        },
+        "berthier mle 1892 riposte": 
+        {
+            "display": "Berthier Mle 1892 Riposte",
+            "ammo type": "long",
+            "damage": 130,
+            "effective_range": 305,
+            "rate_of_fire": 36,
+            "handling": 79,
+            "reload_time": 3,
+            "muzzle_velocity": 590,
+            "melee_damage": 82,
+            "heavy_melee_damage": 168,
+            "cost": 370,
             "mag_size": 3,
             "reserve_ammo": 12,
             "special_ammo_list": "berthier"
@@ -232,6 +249,23 @@ function populate_weapons() {
             "heavy_melee_damage": 31,
             "cost": 306,            
             "mag_size": 9,
+            "reserve_ammo": 10,
+            "special_ammo_list": "bornheim"
+        },
+        "bornheim no. 3 match": 
+        {
+            "display": "Bornheim No. 3 Match",
+            "ammo type": "compact",
+            "damage": 80,
+            "effective_range": 68,
+            "rate_of_fire": 210,
+            "handling": 85,
+            "reload_time": 3,
+            "muzzle_velocity": 400,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 224,            
+            "mag_size": 6,
             "reserve_ammo": 10,
             "special_ammo_list": "bornheim"
         },
@@ -405,6 +439,23 @@ function populate_weapons() {
             "reserve_ammo": 10,
             "special_ammo_list": "dolch 96"
         },
+        "dolch 96 precision": 
+        {
+            "display": "Dolch 96 Precision",
+            "ammo type": "medium",
+            "damage": 97,
+            "effective_range": 78,
+            "rate_of_fire": 164,
+            "handling": 69,
+            "reload_time": 6,
+            "muzzle_velocity": 440,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 790,            
+            "mag_size": 10,
+            "reserve_ammo": 10,
+            "special_ammo_list": "dolch 96"
+        },
         "hand crossbow": 
         {
             "display": "Hand Crossbow",
@@ -558,7 +609,7 @@ function populate_weapons() {
             "reserve_ammo": 20,
             "special_ammo_list": "martini-henry ic1"
         },
-        "martini-henry ic1": 
+        "martini-henry ic1 deadeye": 
         {
             "display": "Martini-Henry IC1 Deadeye",
             "ammo type": "long",
@@ -575,19 +626,19 @@ function populate_weapons() {
             "reserve_ammo": 20,
             "special_ammo_list": "martini-henry ic1"
         },
-        "martini-henry ic1 riposte": 
+        "martini-henry ic1 marksman": 
         {
-            "display": "Martini-Henry IC1 Riposte",
+            "display": "Martini-Henry IC1 Marksman",
             "ammo type": "long",
             "damage": 143,
             "effective_range": 334,
             "rate_of_fire": 45,
-            "handling": 66,
+            "handling": 68,
             "reload_time": 3,
             "muzzle_velocity": 400,
-            "melee_damage": 82,
-            "heavy_melee_damage": 168,
-            "cost": 164,            
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 173,            
             "mag_size": 1,
             "reserve_ammo": 20,
             "special_ammo_list": "martini-henry ic1"
@@ -768,7 +819,7 @@ function populate_weapons() {
             "ammo type": "compact",
             "damage": 91,
             "effective_range": 73,
-            "rate_of_fire": 100,
+            "rate_of_fire": 120,
             "handling": 58,
             "reload_time": 12,
             "muzzle_velocity": 330,
@@ -779,13 +830,30 @@ function populate_weapons() {
             "reserve_ammo": 14,
             "special_ammo_list": "nagant m1895"
         },
+        "nagant m1895 officer brawler": 
+        {
+            "display": "Nagant M1895 Officer Brawler",
+            "ammo type": "compact",
+            "damage": 91,
+            "effective_range": 73,
+            "rate_of_fire": 120,
+            "handling": 54,
+            "reload_time": 12,
+            "muzzle_velocity": 330,
+            "melee_damage": 31,
+            "heavy_melee_damage": 72,
+            "cost": 110,            
+            "mag_size": 7,
+            "reserve_ammo": 14,
+            "special_ammo_list": "nagant m1895"
+        },
         "nagant m1895 officer carbine": 
         {
             "display": "Nagant M1895 Officer Carbine",
             "ammo type": "compact",
             "damage": 104,
             "effective_range": 92,
-            "rate_of_fire": 100,
+            "rate_of_fire": 120,
             "handling": 89,
             "reload_time": 12,
             "muzzle_velocity": 360,
@@ -802,7 +870,7 @@ function populate_weapons() {
             "ammo type": "compact",
             "damage": 104,
             "effective_range": 92,
-            "rate_of_fire": 100,
+            "rate_of_fire": 120,
             "handling": 84,
             "reload_time": 12,
             "muzzle_velocity": 360,
@@ -881,6 +949,23 @@ function populate_weapons() {
             "reserve_ammo": 12,
             "special_ammo_list": "romero 77"
         },
+        "romero 77 alamo": 
+        {
+            "display": "Romero 77 Alamo",
+            "ammo type": "shotgun",
+            "damage": 200,
+            "effective_range": 15,
+            "rate_of_fire": 22,
+            "handling": 92,
+            "reload_time": 13,
+            "muzzle_velocity": 450,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 98,            
+            "mag_size": 5,
+            "reserve_ammo": 5,
+            "special_ammo_list": "romero 77"
+        },
         "romero 77 handcannon": 
         {
             "display": "Romero 77 Handcannon",
@@ -949,6 +1034,23 @@ function populate_weapons() {
             "reserve_ammo": 12,
             "special_ammo_list": "scottfield"
         },
+        "scottfield model 3 brawler": 
+        {
+            "display": "Scottfield Model 3 Brawler",
+            "ammo type": "medium",
+            "damage": 107,
+            "effective_range": 85,
+            "rate_of_fire": 41,
+            "handling": 62,
+            "reload_time": 9,
+            "muzzle_velocity": 280,
+            "melee_damage": 31,
+            "heavy_melee_damage": 72,
+            "cost": 92,            
+            "mag_size": 6,
+            "reserve_ammo": 12,
+            "special_ammo_list": "scottfield"
+        },
         "scottfield model 3 precision": 
         {
             "display": "Scottfield Model 3 Precision",
@@ -1000,23 +1102,295 @@ function populate_weapons() {
             "reserve_ammo": 12,
             "special_ammo_list": "scottfield"
         },
-        "none":
+        "sparks lrr": 
         {
-            "display": "None",
-            "ammo type": "none",
-            "damage": 0,
-            "effective_range": 0,
-            "rate_of_fire": 0,
-            "handling": 0,
-            "reload_time": 0,
-            "muzzle_velocity": 0,
-            "melee_damage": 0,
-            "heavy_melee_damage": 0,
-            "cost": 0,            
-            "mag_size": 0,
-            "reserve_ammo": 0,
-            "special_ammo_list": "none"
-        }
+            "display": "Sparks LRR",
+            "ammo type": "long",
+            "damage": 149,
+            "effective_range": 347,
+            "rate_of_fire": 38,
+            "handling": 73,
+            "reload_time": 4,
+            "muzzle_velocity": 533,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 130,            
+            "mag_size": 1,
+            "reserve_ammo": 16,
+            "special_ammo_list": "sparks"
+        },
+        "sparks lrr silencer": 
+        {
+            "display": "Sparks LRR Silencer",
+            "ammo type": "long",
+            "damage": 149,
+            "effective_range": 144,
+            "rate_of_fire": 38,
+            "handling": 71,
+            "reload_time": 4,
+            "muzzle_velocity": 300,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 150,            
+            "mag_size": 1,
+            "reserve_ammo": 16,
+            "special_ammo_list": "sparks"
+        },
+        "sparks lrr sniper": 
+        {
+            "display": "Sparks LRR Sniper",
+            "ammo type": "long",
+            "damage": 149,
+            "effective_range": 347,
+            "rate_of_fire": 38,
+            "handling": 70,
+            "reload_time": 4,
+            "muzzle_velocity": 533,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 199,            
+            "mag_size": 1,
+            "reserve_ammo": 16,
+            "special_ammo_list": "sparks"
+        },
+        "sparks lrr pistol": 
+        {
+            "display": "Sparks LRR Pistol",
+            "ammo type": "long",
+            "damage": 149,
+            "effective_range": 150,
+            "rate_of_fire": 38,
+            "handling": 60,
+            "reload_time": 4,
+            "muzzle_velocity": 453,
+            "melee_damage": 13,
+            "heavy_melee_damage": 31,
+            "cost": 155,            
+            "mag_size": 1,
+            "reserve_ammo": 14,
+            "special_ammo_list": "sparks"
+        },
+        "specter 1882": 
+        {
+            "display": "Specter 1882",
+            "ammo type": "shotgun",
+            "damage": 185,
+            "effective_range": 12,
+            "rate_of_fire": 40,
+            "handling": 85,
+            "reload_time": 14,
+            "muzzle_velocity": 425,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 188,            
+            "mag_size": 5,
+            "reserve_ammo": 10,
+            "special_ammo_list": "specter"
+        },
+        "specter 1882 bayoney": 
+        {
+            "display": "Specter 1882 Bayonet",
+            "ammo type": "shotgun",
+            "damage": 175,
+            "effective_range": 12,
+            "rate_of_fire": 40,
+            "handling": 81,
+            "reload_time": 14,
+            "muzzle_velocity": 400,
+            "melee_damage": 27,
+            "heavy_melee_damage": 168,
+            "cost": 223,            
+            "mag_size": 5,
+            "reserve_ammo": 10,
+            "special_ammo_list": "specter"
+        },
+        "specter 1882 compact": 
+        {
+            "display": "Specter 1882 Compact",
+            "ammo type": "shotgun",
+            "damage": 85,
+            "effective_range": 8,
+            "rate_of_fire": 40,
+            "handling": 80,
+            "reload_time": 11,
+            "muzzle_velocity": 350,
+            "melee_damage": 13,
+            "heavy_melee_damage": 31,
+            "cost": 164,            
+            "mag_size": 4,
+            "reserve_ammo": 8,
+            "special_ammo_list": "specter"
+        },
+        "springfield 1866": 
+        {
+            "display": "Springfield 1866",
+            "ammo type": "medium",
+            "damage": 132,
+            "effective_range": 212,
+            "rate_of_fire": 42,
+            "handling": 80,
+            "reload_time": 2,
+            "muzzle_velocity": 490,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 38,            
+            "mag_size": 1,
+            "reserve_ammo": 24,
+            "special_ammo_list": "springfield"
+        },
+        "springfield 1866 compact": 
+        {
+            "display": "Springfield 1866 Compact",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 67,
+            "reload_time": 2,
+            "muzzle_velocity": 440,
+            "melee_damage": 13,
+            "heavy_melee_damage": 31,
+            "cost": 33,            
+            "mag_size": 1,
+            "reserve_ammo": 24,
+            "special_ammo_list": "springfield"
+        },
+        "springfield 1866 compact deadeye": 
+        {
+            "display": "Springfield 1866 Compact Deadeye",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 73,
+            "reload_time": 2,
+            "muzzle_velocity": 440,
+            "melee_damage": 13,
+            "heavy_melee_damage": 31,
+            "cost": 46,            
+            "mag_size": 1,
+            "reserve_ammo": 24,
+            "special_ammo_list": "springfield"
+        },
+        "springfield 1866 compact striker": 
+        {
+            "display": "Springfield 1866 Compact Striker",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 66,
+            "reload_time": 2,
+            "muzzle_velocity": 440,
+            "melee_damage": 52,
+            "heavy_melee_damage": 105,
+            "cost": 56,            
+            "mag_size": 1,
+            "reserve_ammo": 24,
+            "special_ammo_list": "springfield"
+        },
+        "springfield 1866 marksman": 
+        {
+            "display": "Springfield 1866 marksman",
+            "ammo type": "medium",
+            "damage": 132,
+            "effective_range": 212,
+            "rate_of_fire": 42,
+            "handling": 75,
+            "reload_time": 2,
+            "muzzle_velocity": 490,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 73,            
+            "mag_size": 1,
+            "reserve_ammo": 24,
+            "special_ammo_list": "springfield"
+        },
+        "vetterli 71 karabiner": 
+        {
+            "display": "Vetterli 71 Karabiner",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 87,
+            "reload_time": 12,
+            "muzzle_velocity": 410,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 105,            
+            "mag_size": 7,
+            "reserve_ammo": 20,
+            "special_ammo_list": "vetterli"
+        },
+        "vetterli 71 karabiner bayonet": 
+        {
+            "display": "Vetterli 71 Karabiner Bayonet",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 85,
+            "reload_time": 12,
+            "muzzle_velocity": 410,
+            "melee_damage": 27,
+            "heavy_melee_damage": 168,
+            "cost": 155,            
+            "mag_size": 7,
+            "reserve_ammo": 20,
+            "special_ammo_list": "vetterli"
+        },
+        "vetterli 71 karabiner deadeye": 
+        {
+            "display": "Vetterli 71 Karabiner Deadeye",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 83,
+            "reload_time": 12,
+            "muzzle_velocity": 410,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 130,            
+            "mag_size": 7,
+            "reserve_ammo": 20,
+            "special_ammo_list": "vetterli"
+        },
+        "vetterli 71 karabiner marksman": 
+        {
+            "display": "Vetterli 71 Karabiner Marksman",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 203,
+            "rate_of_fire": 42,
+            "handling": 80,
+            "reload_time": 12,
+            "muzzle_velocity": 410,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 190,            
+            "mag_size": 7,
+            "reserve_ammo": 20,
+            "special_ammo_list": "vetterli"
+        },
+        "vetterli 71 karabiner silencer": 
+        {
+            "display": "Vetterli 71 Karabiner Silencer",
+            "ammo type": "medium",
+            "damage": 130,
+            "effective_range": 133,
+            "rate_of_fire": 42,
+            "handling": 82,
+            "reload_time": 12,
+            "muzzle_velocity": 280,
+            "melee_damage": 27,
+            "heavy_melee_damage": 54,
+            "cost": 150,            
+            "mag_size": 7,
+            "reserve_ammo": 20,
+            "special_ammo_list": "vetterli"
+        },
     }
 }
 
