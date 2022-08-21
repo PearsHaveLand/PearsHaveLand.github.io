@@ -18,7 +18,7 @@ var MAX_VALUES = {
     "muzzle_velocity" : 600,
     "melee_damage" : 150,
     "heavy_melee_damage" : 150,
-    "capacity" : 40,
+    "reserve_ammo" : 40,
     "mag_size" : 17,
 }
 
@@ -31,7 +31,7 @@ var STAT_LIST = [
     "muzzle_velocity",
     "melee_damage",
     "heavy_melee_damage",
-    "capacity",
+    "reserve_ammo",
     "mag_size",
 ]
 
