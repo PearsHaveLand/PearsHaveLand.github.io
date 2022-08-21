@@ -18,6 +18,8 @@ var MAX_VALUES = {
     "muzzle_velocity" : 600,
     "melee_damage" : 150,
     "heavy_melee_damage" : 150,
+    "capacity" : 40,
+    "mag_size" : 17,
 }
 
 var STAT_LIST = [
@@ -28,12 +30,20 @@ var STAT_LIST = [
     "handling",
     "muzzle_velocity",
     "melee_damage",
-    "heavy_melee_damage"
+    "heavy_melee_damage",
+    "capacity",
+    "mag_size",
 ]
 
 var stat_display_cards = {};
 
 window.onload = function() {
+
+    // Handle vertical screens
+    if(screen.availHeight > screen.availWidth){
+        document.getElementById("card-list-wrapper").classList.remove("card-list-2-column");
+    }
+
     weapons = populate_weapons();
     fill_weapons_datalist();
     generate_stat_display_cards();
@@ -49,6 +59,9 @@ function update_weapon_stat_cards() {
     
     let weapon1 = (weapon1_name in weapons) ? weapons[weapon1_name] : weapons["none"];
     let weapon2 = (weapon2_name in weapons) ? weapons[weapon2_name] : weapons["none"];
+
+    weapon1["capacity"] = weapon1["mag_size"] + weapon1["reserve_ammo"];
+    weapon2["capacity"] = weapon2["mag_size"] + weapon2["reserve_ammo"];
 
     let weapon_1_name_fields = document.getElementsByClassName("weapon1-name");
     for (item in weapon_1_name_fields) {

@@ -37,7 +37,7 @@ h3 {
 }
 
 .characteristic-card {
-    margin-top: 1em;
+    margin-bottom: 1em;
     padding: 1em;
     background-color: var(--jumbotron-background);
     border-radius: 5px;
@@ -46,6 +46,11 @@ h3 {
 .weapon-select-item {
     margin: 1em;
     padding: .5em;
+}
+
+.card-list-2-column {
+    column-count: 2;
+    padding-top: 1em;
 }
 
 #weapon_compare_container {
