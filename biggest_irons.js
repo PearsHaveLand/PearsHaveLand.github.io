@@ -79,17 +79,17 @@ function update_weapon_stat_cards() {
         weapon_1_bar.innerHTML = weapon1[stat];
         weapon_2_bar.innerHTML = weapon2[stat];
 
-        // TODO: make progress bar not display when at 0
-        //
-        // if (weapon_1_bar.innerHTML == 0)
-        //     weapon_1_bar.setAttribute("display", "none");
-        // else
-        //     weapon_1_bar.setAttribute("display", "flex");
+        // The padded text causes the bar to display even when the
+        // value is 0. So remove the padding if the value is 0
+        if (weapon_1_bar.innerHTML == 0)
+            weapon_1_bar.classList.remove("weapon_bar_padded_text");
+        else
+            weapon_1_bar.classList.add("weapon_bar_padded_text");
 
-        // if (weapon_2_bar.innerHTML == 0)
-        //     weapon_2_bar.setAttribute("display", "none");
-        // else
-        //     weapon_2_bar.setAttribute("display", "flex");
+        if (weapon_2_bar.innerHTML == 0)
+            weapon_2_bar.classList.remove("weapon_bar_padded_text");
+        else
+            weapon_2_bar.classList.add("weapon_bar_padded_text");
     }
 }
 

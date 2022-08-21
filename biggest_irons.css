@@ -21,7 +21,7 @@ h3 {
     color: var(--nord5);
     font-weight: bold;
     text-align: right;
-    padding-right: 0.5rem
+    /*padding-right: 0.5rem*/
 }
 
 .weapon2_bar {
@@ -29,7 +29,11 @@ h3 {
     color: var(--nord5);
     font-weight: bold;
     text-align: right;
-    padding-right: 0.5rem
+    /*padding-right: 0.5rem*/
+}
+
+.weapon_bar_padded_text {
+    padding-right: 0.5rem;
 }
 
 .characteristic-card {
