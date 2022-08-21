@@ -39,17 +39,28 @@ var stat_display_cards = {};
 
 window.onload = function() {
 
-    // Handle vertical screens
-    if(screen.availHeight > screen.availWidth){
-        document.getElementById("card-list-wrapper").classList.remove("card-list-2-column");
-    }
-
+    window.onresize = handle_resize;
+    handle_resize();
+    
     weapons = populate_weapons();
     fill_weapons_datalist();
     generate_stat_display_cards();
     document.getElementById("weapon_compare_searchbox1").oninput = update_weapon_stat_cards;
     document.getElementById("weapon_compare_searchbox2").oninput = update_weapon_stat_cards;
     update_weapon_stat_cards();
+}
+
+function handle_resize() {
+    
+    console.log("handling resize!");
+
+    // Vertical screens should have only one column
+    if (screen.availHeight >= screen.availWidth || window.innerHeight >= window.innerWidth) {
+        document.getElementById("card-list-wrapper").classList.remove("card-list-2-column");
+    }
+    else {
+        document.getElementById("card-list-wrapper").classList.add("card-list-2-column");
+    }
 }
 
 function update_weapon_stat_cards() {
