@@ -9,215 +9,89 @@ var MAX_RLD = 15  // placeholder for max reload speed
 var MAX_VEL = 600 // max muzzle velocity
 var MAX_MEL = 150 // max melee damage
 
+var MAX_VALUES = {
+    "damage" : 364,
+    "effective_range" : 300,
+    "rate_of_fire" : 70,
+    "reload_time" : 15,
+    "handling" : 100,
+    "muzzle_velocity" : 600,
+    "melee_damage" : 150,
+    "heavy_melee_damage" : 150,
+}
+
+var STAT_LIST = [
+    "damage",
+    "effective_range",
+    "rate_of_fire",
+    "reload_time",
+    "handling",
+    "muzzle_velocity",
+    "melee_damage",
+    "heavy_melee_damage"
+]
+
+var stat_display_cards = {};
+
 window.onload = function() {
     weapons = populate_weapons();
-    ammos = populate_ammos();
     fill_weapons_datalist();
-    console.log(weapons);
-    document.getElementById("weapon_compare_searchbox1").oninput = update_weapon1;
-    document.getElementById("weapon_compare_searchbox2").oninput = update_weapon2;
-    update_weapon1();
-    update_weapon2();
+    generate_stat_display_cards();
+    console.log(stat_display_cards);
+    document.getElementById("weapon_compare_searchbox1").oninput = update_weapon_stat_cards;
+    document.getElementById("weapon_compare_searchbox2").oninput = update_weapon_stat_cards;
+    update_weapon_stat_cards();
 }
 
-function update_weapon1() {
+function update_weapon_stat_cards() {
 
-    let user_input = document.getElementById("weapon_compare_searchbox1").value.toLowerCase();
-
-    let weapon1 = null;
-
-    // Filter incorrect input
-    if (user_input in weapons) {
-        weapon1 = weapons[user_input];
-    }
-    else {
-        weapon1 = weapons["none"];
-    }
-    let weapon_name_displays = document.getElementsByClassName("weapon1-name");
-    for (item in weapon_name_displays) {
-        weapon_name_displays[item].innerHTML = weapon1["display"] + ":";
-    }
-
-    // damage
-    let dmg_bar = document.getElementById("weapon1_damage");
-    dmg_bar.setAttribute("aria-valuenow", weapon1["damage"].toString());
-
-    let dmg_percent = (weapon1["damage"]/MAX_DMG) * 100;
-
-    dmg_bar.setAttribute("style", "width: " + dmg_percent.toString() + "%")
-
-    dmg_bar.innerHTML = weapon1["damage"];
-
-    // range
-    let rng_bar = document.getElementById("weapon1_effective_range");
-    rng_bar.setAttribute("aria-valuenow", weapon1["effective_range"].toString());
-
-    let rng_percent = (weapon1["effective_range"]/MAX_RNG) * 100;
-
-    rng_bar.setAttribute("style", "width: " + rng_percent.toString() + "%")
-
-    rng_bar.innerHTML = weapon1["effective_range"];
-
-    // rate of fire
-    let rof_bar = document.getElementById("weapon1_rate_of_fire");
-    rof_bar.setAttribute("aria-valuenow", weapon1["rate_of_fire"].toString());
-
-    let rof_percent = (weapon1["rate_of_fire"]/MAX_ROF) * 100;
-
-    rof_bar.setAttribute("style", "width: " + rof_percent.toString() + "%")
-
-    rof_bar.innerHTML = weapon1["rate_of_fire"];
-
-    // handling
-    let hdl_bar = document.getElementById("weapon1_handling");
-    hdl_bar.setAttribute("aria-valuenow", weapon1["handling"].toString());
-
-    // handling is already measured as a percentage in-game
-    let hdl_percent = weapon1["handling"]; 
-
-    hdl_bar.setAttribute("style", "width: " + hdl_percent.toString() + "%")
-
-    hdl_bar.innerHTML = weapon1["handling"];
-
-    // reload time
-    let rld_bar = document.getElementById("weapon1_reload_time");
-    rld_bar.setAttribute("aria-valuenow", weapon1["reload_time"].toString());
-
-    let rld_percent = (weapon1["reload_time"]/MAX_RLD) * 100;
-
-    rld_bar.setAttribute("style", "width: " + rld_percent.toString() + "%")
-
-    rld_bar.innerHTML = weapon1["reload_time"];
-
-    // muzzle velocity
-    let vel_bar = document.getElementById("weapon1_velocity");
-    vel_bar.setAttribute("aria-valuenow", weapon1["muzzle_velocity"].toString());
-
-    let vel_percent = (weapon1["muzzle_velocity"]/MAX_VEL) * 100;
-
-    vel_bar.setAttribute("style", "width: " + vel_percent.toString() + "%")
-
-    vel_bar.innerHTML = weapon1["muzzle_velocity"];
-
-    // melee dmg
-    let mel_bar = document.getElementById("weapon1_melee_damage");
-    mel_bar.setAttribute("aria-valuenow", weapon1["melee_damage"].toString());
-
-    let mel_percent = (weapon1["melee_damage"]/MAX_MEL) * 100;
-
-    mel_bar.setAttribute("style", "width: " + mel_percent.toString() + "%")
-
-    mel_bar.innerHTML = weapon1["melee_damage"];
-
-    // heavy melee dmg
-    let hvy_bar = document.getElementById("weapon1_heavy_melee_damage");
-    hvy_bar.setAttribute("aria-valuenow", weapon1["heavy_melee_damage"].toString());
-
-    let hvy_percent = (weapon1["heavy_melee_damage"]/MAX_MEL) * 100;
-
-    hvy_bar.setAttribute("style", "width: " + hvy_percent.toString() + "%")
-
-    hvy_bar.innerHTML = weapon1["heavy_melee_damage"];
-}
-
-function update_weapon2() {
-    let user_input = document.getElementById("weapon_compare_searchbox2").value.toLowerCase();
-
+    let weapon1_name = document.getElementById("weapon_compare_searchbox1").value.toLowerCase();
+    let weapon2_name = document.getElementById("weapon_compare_searchbox2").value.toLowerCase();
     
-    let weapon1 = null;
+    let weapon1 = (weapon1_name in weapons) ? weapons[weapon1_name] : weapons["none"];
+    let weapon2 = (weapon2_name in weapons) ? weapons[weapon2_name] : weapons["none"];
 
-    // Filter incorrect input
-    if (user_input in weapons) {
-        weapon2 = weapons[user_input];
-    }
-    else {
-        weapon2 = weapons["none"];
-    }
-    let weapon_name_displays = document.getElementsByClassName("weapon2-name");
-    for (item in weapon_name_displays) {
-        weapon_name_displays[item].innerHTML = weapon2["display"] + ":";
+    let weapon_1_name_fields = document.getElementsByClassName("weapon1-name");
+    for (item in weapon_1_name_fields) {
+        weapon_1_name_fields[item].innerHTML = weapon1["display"] + ":";
     }
 
-    // damage
-    let dmg_bar = document.getElementById("weapon2_damage");
-    dmg_bar.setAttribute("aria-valuenow", weapon2["damage"].toString());
+    let weapon_2_name_fields = document.getElementsByClassName("weapon2-name");
+    for (item in weapon_2_name_fields) {
+        weapon_2_name_fields[item].innerHTML = weapon2["display"] + ":";
+    }
 
-    let dmg_percent = (weapon2["damage"]/MAX_DMG) * 100;
+    for (var stat of STAT_LIST) {
+        let weapon_1_stat_name = "weapon1_" + stat;
+        let weapon_2_stat_name = "weapon2_" + stat;
 
-    dmg_bar.setAttribute("style", "width: " + dmg_percent.toString() + "%")
+        let weapon_1_bar = stat_display_cards[stat][weapon_1_stat_name];
+        let weapon_2_bar = stat_display_cards[stat][weapon_2_stat_name];
 
-    dmg_bar.innerHTML = weapon2["damage"];
+        weapon_1_bar.setAttribute("aria-valuenow", weapon1[stat].toString());
+        weapon_2_bar.setAttribute("aria-valuenow", weapon2[stat].toString());
 
-    // range
-    let rng_bar = document.getElementById("weapon2_effective_range");
-    rng_bar.setAttribute("aria-valuenow", weapon2["effective_range"].toString());
+        let weapon_1_stat_percent = (weapon1[stat]/MAX_VALUES[stat]) * 100;
+        let weapon_2_stat_percent = (weapon2[stat]/MAX_VALUES[stat]) * 100;
 
-    let rng_percent = (weapon2["effective_range"]/MAX_RNG) * 100;
+        weapon_1_bar.setAttribute("style", "width: " + weapon_1_stat_percent.toString() + "%");
+        weapon_2_bar.setAttribute("style", "width: " + weapon_2_stat_percent.toString() + "%");
 
-    rng_bar.setAttribute("style", "width: " + rng_percent.toString() + "%")
+        weapon_1_bar.innerHTML = weapon1[stat];
+        weapon_2_bar.innerHTML = weapon2[stat];
 
-    rng_bar.innerHTML = weapon2["effective_range"];
+        // TODO: make progress bar not display when at 0
+        //
+        // if (weapon_1_bar.innerHTML == 0)
+        //     weapon_1_bar.setAttribute("display", "none");
+        // else
+        //     weapon_1_bar.setAttribute("display", "flex");
 
-    // rate of fire
-    let rof_bar = document.getElementById("weapon2_rate_of_fire");
-    rof_bar.setAttribute("aria-valuenow", weapon2["rate_of_fire"].toString());
-
-    let rof_percent = (weapon2["rate_of_fire"]/MAX_ROF) * 100;
-
-    rof_bar.setAttribute("style", "width: " + rof_percent.toString() + "%")
-
-    rof_bar.innerHTML = weapon2["rate_of_fire"];
-
-    // handling
-    let hdl_bar = document.getElementById("weapon2_handling");
-    hdl_bar.setAttribute("aria-valuenow", weapon2["handling"].toString());
-
-    // handling is already measured as a percentage in-game
-    let hdl_percent = weapon2["handling"]; 
-
-    hdl_bar.setAttribute("style", "width: " + hdl_percent.toString() + "%")
-
-    hdl_bar.innerHTML = weapon2["handling"];
-
-    // reload time
-    let rld_bar = document.getElementById("weapon2_reload_time");
-    rld_bar.setAttribute("aria-valuenow", weapon2["reload_time"].toString());
-
-    let rld_percent = (weapon2["reload_time"]/MAX_RLD) * 100;
-
-    rld_bar.setAttribute("style", "width: " + rld_percent.toString() + "%")
-
-    rld_bar.innerHTML = weapon2["reload_time"];
-
-    // muzzle velocity
-    let vel_bar = document.getElementById("weapon2_velocity");
-    vel_bar.setAttribute("aria-valuenow", weapon2["muzzle_velocity"].toString());
-
-    let vel_percent = (weapon2["muzzle_velocity"]/MAX_VEL) * 100;
-
-    vel_bar.setAttribute("style", "width: " + vel_percent.toString() + "%")
-
-    vel_bar.innerHTML = weapon2["muzzle_velocity"];
-
-    // melee dmg
-    let mel_bar = document.getElementById("weapon2_melee_damage");
-    mel_bar.setAttribute("aria-valuenow", weapon2["melee_damage"].toString());
-
-    let mel_percent = (weapon2["melee_damage"]/MAX_MEL) * 100;
-
-    mel_bar.setAttribute("style", "width: " + mel_percent.toString() + "%")
-
-    mel_bar.innerHTML = weapon2["melee_damage"];
-
-    // heavy melee dmg
-    let hvy_bar = document.getElementById("weapon2_heavy_melee_damage");
-    hvy_bar.setAttribute("aria-valuenow", weapon2["heavy_melee_damage"].toString());
-
-    let hvy_percent = (weapon2["heavy_melee_damage"]/MAX_MEL) * 100;
-
-    hvy_bar.setAttribute("style", "width: " + hvy_percent.toString() + "%")
-
-    hvy_bar.innerHTML = weapon2["heavy_melee_damage"];
+        // if (weapon_2_bar.innerHTML == 0)
+        //     weapon_2_bar.setAttribute("display", "none");
+        // else
+        //     weapon_2_bar.setAttribute("display", "flex");
+    }
 }
 
 function fill_weapons_datalist() {
@@ -246,8 +120,37 @@ function toggle_desc() {
     }
 }
 
+function generate_stat_display_cards() {
+    
+    for (var stat of STAT_LIST) {
+        let weapon_1_stat_name = "weapon1_" + stat;
+        let weapon_2_stat_name = "weapon2_" + stat;
+
+        stat_display_cards[stat] = {};
+        stat_display_cards[stat][weapon_1_stat_name] = document.getElementById(weapon_1_stat_name);
+        stat_display_cards[stat][weapon_2_stat_name] = document.getElementById(weapon_2_stat_name);
+    }
+}
+
 function populate_weapons() {
     return {
+        "none":
+        {
+            "display": "None",
+            "ammo type": "none",
+            "damage": 0,
+            "effective_range": 0,
+            "rate_of_fire": 0,
+            "handling": 0,
+            "reload_time": 0,
+            "muzzle_velocity": 0,
+            "melee_damage": 0,
+            "heavy_melee_damage": 0,
+            "cost": 0,
+            "mag_size": 0,
+            "reserve_ammo": 0,
+            "special_ammo_list": "berthier"
+        },
         "berthier mle 1892": 
         {
             "display": "Berthier Mle 1892",
