@@ -293,6 +293,24 @@ function populate_weapons() {
             "reserve_ammo": 10,
             "special_ammo_list": "bornheim"
         },
+        "caldwell 92 new army": 
+        {
+            "display": "Caldwell 92 New Army",
+            "ammo type": "compact",
+            "damage": 97,
+            "effective_range": 79,
+            "rate_of_fire": 107,
+            "handling": 59,
+            "reload_time": 10,
+            "muzzle_velocity": 230,
+            "melee_damage": 13,
+            "heavy_melee_damage": 31,
+            "cost": 90,            
+            "mag_size": 6,
+            "reserve_ammo": 12,
+            "special_ammo_list": "caldwell 92"
+        },
+        
         "caldwell conversion chain pistol": 
         {
             "display": "Caldwell Conversion Chain Pistol",
